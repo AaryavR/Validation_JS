@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Validation using API in JS</title>
+    </head>
+    <body>
+        <input id="pluh" type="number" min="100" max="300" required>
+        <button name="button" onClick="fu()">Enter</button>
+        <p>Enter a number. If the number is not within the range of 100-300, and error message will be displayed</p>
+        <p id="res"></p>
+
+        <script>
+            function fu() {
+                var a = document.getElementById("pluh")
+                if (!a.checkValidity()) {
+                    document.getElementById("res").innerHTML = a.validationMessage
+                }
+                else {
+                    document.getElementById("res").innerHTML = "Input Accepted" 
+                }
+            }
+
+
+        </script>
+
+    </body>
+
+
+</html>
