@@ -1,0 +1,32 @@
+<html>
+
+    <head>
+        <title>Validating Forms in JS</title>
+    </head>
+
+    <body>
+        <form name="myForm" onSubmit="d()">
+            <label>Name</label>
+            <input type="text" name="Name">
+            <input type="submit" value="Submit">
+        </form>
+
+        <script>
+            function d() {
+                var v = document.forms["myForm"]["Name"].value;
+                if(v == 0) {
+                    alert("Name must be filled out")
+                    return False
+                }
+                else {
+                    document.write("Name Submitted")
+                }
+            }
+
+
+        </script>
+
+
+    </body>
+
+</html>
