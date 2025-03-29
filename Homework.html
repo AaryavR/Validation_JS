@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Login Form Validation</title>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Login Form</h2>
+            <form onsubmit="return validateForm()">
+                <input type="text" id="name" placeholder="Enter your name" required>
+                <input type="number" id="age" placeholder="Enter your age" required>
+                <button type="submit">Submit</button>
+                <p id="error-message" class="error"></p>
+            </form>
+        </div>
+        <script>
+            function validateForm() {
+                let name = document.getElementById('name').value;
+                let age = document.getElementById('age').value;
+                let errorMessage = document.getElementById('error-message');
+                
+                if (name.trim() === "") {
+                    errorMessage.textContent = "Name cannot be empty.";
+                    return false;
+                }
+                if (age < 18) {
+                    errorMessage.textContent = "You must be at least 18 years old.";
+                    return false;
+                }
+                errorMessage.textContent = "";
+                alert("Login successful!");
+                return true;
+            }
+        </script>
+    </body>
+</html>
